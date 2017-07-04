@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  esr:
+    build:
+      context: ./
+    restart: "no"
+    environment:
+      - "DISPLAY=${DISPLAY}"
+      - "HOME=/home/user"
+      - "uid=$UID"
+      - "gid=$GID"
+      - "LANG=${LANG}"
+    volumes:
+      - ./home:/home/user
+      - /tmp/.X11-unix:/tmp/.X11-unix
